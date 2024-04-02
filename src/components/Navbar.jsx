@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { typeOfFoods } from "../data";
 const Navbar = () => {
-  const [beActive, setBeActive] = useState();
+  const [salom, setSalmo] = useState([
+    { id: 0, name: "Холодные закуски" },
+    { id: 1, name: "Горячие закуски" },
+    { id: 2, name: "Мясные блюда" },
+    { id: 3, name: "Супы" },
+    { id: 4, name: "Рыбные блюда" },
+    { id: 5, name: "Напитки" },
+    { id: 6, name: "Гриль меню" },
+    { id: 7, name: "Фирменные блюда" },
+  ]);
+  const [bir, setBir] = useState(0);
   const active = (e) => {
-    let actived = typeOfFoods.find((i) => i.id === parseInt(e.target.id));
-    actived.isActive = true;
-    console.log(actived);
+    setBir(parseInt(e.target.id));
   };
   return (
-    <div className="bg-perfectGray">
+    <div className="bg-perfectGray border-b-2">
       <nav className="containerb">
-        <ul className="flex items-center justify-between h-24 pt-9 border-b-2">
-          {typeOfFoods.map((elem) => {
+        <ul className="flex items-center justify-between h-24 pt-9">
+          {salom.map((pr) => {
             return (
-              <li onClick={active} id="1" key={elem.id} className="h-full">
-                <Link
-                  to="/"
-                  id={elem.id}
-                  className={`flex giliroy flex-col text-lg text-gray relative items-center justify-between h-full ${
-                    elem.isActive ? "after:block" : "after:hidden"
-                  }`}
-                >
-                  {elem.name}
-                </Link>
-                {/* <span className="w-full h-2 bg-red-600 inline-block"></span> */}
+              <li
+                key={pr.id}
+                onClick={active}
+                className={`text-white flex items-center flex-col pb-8 text-lg giliroy  relative ${pr.id === bir ? "salom" : ""} cursor-pointer`}
+              >
+                <h1 id={pr.id}>{pr.name}</h1>
               </li>
             );
           })}
         </ul>
       </nav>
-
     </div>
   );
 };
