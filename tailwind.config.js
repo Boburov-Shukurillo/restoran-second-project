@@ -11,9 +11,14 @@ export default {
       },
       fontSize: {
         67: "67px",
+        13: "13px",
+        22: "22px",
       },
       screens: {
         1600: "1600px",
+      },
+      borderWidth: {
+        "05": "0.5px",
       },
     },
   },

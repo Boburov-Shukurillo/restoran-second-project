@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [salom, setSalmo] = useState([
     { id: 0, name: "Холодные закуски" },
@@ -13,20 +13,26 @@ const Navbar = () => {
   ]);
   const [bir, setBir] = useState(0);
   const active = (e) => {
-    setBir(parseInt(e.target.id));
+    setBir(+e.target.id);
   };
+
   return (
-    <div className="bg-perfectGray border-b-2">
+    <div
+      className={`bg-perfectGray border-b-2 border-b-white/5 z-30 w-full`}
+    >
       <nav className="containerb">
         <ul className="flex items-center justify-between h-24 pt-9">
-          {salom.map((pr) => {
+          {salom.map((pr,i) => {
             return (
               <li
                 key={pr.id}
                 onClick={active}
-                className={`text-white flex items-center flex-col pb-8 text-lg giliroy  relative ${pr.id === bir ? "salom" : ""} cursor-pointer`}
+                className={`text-white flex items-center flex-col pb-8 text-lg giliroy-200  relative ${
+                  pr.id === bir ? "salom" : ""
+                } cursor-pointer`}
+                id={i}
               >
-                <h1 id={pr.id}>{pr.name}</h1>
+                <h3 id={i}>{pr.name}</h3>
               </li>
             );
           })}

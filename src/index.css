@@ -12,9 +12,30 @@
   font-family: giliroy;
   src: url(./fontFamily/Gilroy-Semibold.ttf);
 }
+@font-face {
+  font-family: giliroy-700;
+  src: url(./fontFamily/Gilroy-Bold.ttf);
+}
+@font-face {
+  font-family: giliroy-200;
+  src: url(./fontFamily/Gilroy-Light.ttf);
+}
+@font-face {
+  font-family: giliroy-500;
+  src: url(./fontFamily/Gilroy-Medium.ttf);
+}
 
 .giliroy {
   font-family: giliroy;
+}
+.giliroy-700 {
+  font-family: giliroy-700;
+}
+.giliroy-500 {
+  font-family: giliroy-500;
+}
+.giliroy-200 {
+  font-family: giliroy-200;
 }
 
 @font-face {
@@ -76,15 +97,15 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  padding: 0 20px;
 }
 
 .classicSwiper .swiper-wrapper {
+  padding: 20px 0;
   display: flex;
 }
 
 .classicSwiper .swiper-slide {
-  height: 400px;
+  height: 390px;
 }
 
 .classicSwiper .swiper-pagination {
@@ -139,4 +160,8 @@
   background-size: cover;
   background-image: url(./assets/arrow.webp);
   z-index: 30;
+}
+
+.butonShadow {
+  box-shadow: 0 5px 10px #72a379;
 }
