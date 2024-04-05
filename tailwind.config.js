@@ -20,6 +20,9 @@ export default {
       borderWidth: {
         "05": "0.5px",
       },
+      height:{
+        2000:"2000px"
+      }
     },
   },
   plugins: [],

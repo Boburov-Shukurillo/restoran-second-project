@@ -165,3 +165,9 @@
 .butonShadow {
   box-shadow: 0 5px 10px #72a379;
 }
+
+
+.shsda{
+  /* backdrop-filter: box-shadow(0,0,100px black inset); */
+  /* box-shadow: 0 -100px 500px black inset; */
+}

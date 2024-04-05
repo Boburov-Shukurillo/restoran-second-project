@@ -2,14 +2,34 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { foods } from "../data";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import minus from "../assets/minus.png";
 import buy from "../assets/Buy.png";
 import plus from "../assets/plus.png";
-const Home = () => {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const Home = ({ setCart, cart }) => {
+  const addToCart = (e) => {
+    let find = foods.find((i) => i.id === parseInt(e.target.id));
+    if (!cart.includes(find)) {
+      setCart((e) => {
+        return [...e, find];
+      });
+      toast.success("This Product Have Is Cart", {
+        autoClose: 500,
+        position: "bottom-right",
+      });
+    } else {
+      toast.error("This Product Have Is Cart", {
+        autoClose: 500,
+        position: "bottom-right",
+      });
+    }
+  };
+
   return (
     <div>
-      <div className="banner bg-contain max-1600:bg-cover">
+      <div className="banner bg-contain bg-no-repeat max-1600:bg-cover">
         <div className="containerb  flex items-start justify-center h-full flex-col ">
           <h1 className="edit text-67 leading-tight relative font-semibold text-focusGray uppercase -rotate-[8deg] mb-20 ml-16">
             Доставка ВКУСНЕЙШИХ <br /> БЛЮд за 60 минут
@@ -20,14 +40,20 @@ const Home = () => {
           <button className="ss w-64 h-12 flex ml-40 text-2xl text-white font-bold rustDemo tracking-widest"></button>
         </div>
       </div>
-
+      <ToastContainer />
       <Navbar />
+
       <div className="border-b-2 border-b-perfectGray py-10">
         <div className="containerb" id="coldFood">
           <h1 className="text-3xl flex items-center giliroy-700 text-white before:content-[''] before:w-1 before:h-10 before:bg-graygreen before:mr-5 mb-14">
             ХОЛОДНЫЕ ЗАКУСКИ
           </h1>
-          <Swiper slidesPerView={4} spaceBetween={16} className="classicSwiper">
+          <Swiper
+            slidesPerView={4}
+            loop={true}
+            spaceBetween={16}
+            className="classicSwiper"
+          >
             <ul>
               {foods.map((game) => {
                 return (
@@ -47,7 +73,7 @@ const Home = () => {
                             <h3 className="text-22 font-bold text-white giliroy">
                               {game.name}
                             </h3>
-                            <p className="giliroy-200 text-white text-xs">
+                            <p className="giliroy-200 text-white text-lg">
                               Вес: {game.massa}
                             </p>
                           </div>
@@ -59,8 +85,13 @@ const Home = () => {
                           <p className="font-semibold text-white giliroy-700">
                             {game.price}₽
                           </p>
-                          <button className="px-5 h-12 butonShadow py-2 bg-graygreen rounded-xl flex items-center gap-x-5 text-white giliroy-500 justify-between ">
-                            В корзину <img src={buy} alt="buy icon" />
+                          <button
+                            onClick={addToCart}
+                            id={game.id}
+                            className="px-5 h-12 butonShadow py-2 bg-graygreen rounded-xl flex items-center gap-x-5 text-white giliroy-500 justify-between "
+                          >
+                            В корзину{" "}
+                            <img id={game.id} src={buy} alt="buy icon" />
                           </button>
                         </div>
                         {/* <div className="flex justify-between w-4/5 gap-x-7 mb-3">
@@ -86,7 +117,12 @@ const Home = () => {
           <h1 className="text-3xl flex items-center giliroy-700 text-white before:content-[''] before:w-1 before:h-10 before:bg-graygreen before:mr-5 mb-14">
             ГОРЯЧИЕ ЗАКУСКИ
           </h1>
-          <Swiper slidesPerView={4} spaceBetween={16} className="classicSwiper">
+          <Swiper
+            slidesPerView={4}
+            loop={true}
+            spaceBetween={16}
+            className="classicSwiper"
+          >
             <ul>
               {foods.map((game) => {
                 return (
@@ -106,7 +142,7 @@ const Home = () => {
                             <h3 className="text-22 font-bold text-white giliroy">
                               {game.name}
                             </h3>
-                            <p className="giliroy-200 text-white text-xs">
+                            <p className="giliroy-200 text-white text-lg">
                               Вес: {game.massa}
                             </p>
                           </div>
@@ -145,7 +181,12 @@ const Home = () => {
           <h1 className="text-3xl flex items-center giliroy-700 text-white before:content-[''] before:w-1 before:h-10 before:bg-graygreen before:mr-5 mb-14">
             Мясные блюда
           </h1>
-          <Swiper slidesPerView={4} spaceBetween={16} className="classicSwiper">
+          <Swiper
+            slidesPerView={4}
+            loop={true}
+            spaceBetween={16}
+            className="classicSwiper"
+          >
             <ul>
               {foods.map((game) => {
                 return (
@@ -165,7 +206,7 @@ const Home = () => {
                             <h3 className="text-22 font-bold text-white giliroy">
                               {game.name}
                             </h3>
-                            <p className="giliroy-200 text-white text-xs">
+                            <p className="giliroy-200 text-white text-lg">
                               Вес: {game.massa}
                             </p>
                           </div>

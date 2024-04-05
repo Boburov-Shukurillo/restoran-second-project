@@ -5,7 +5,7 @@ import Search from "../assets/Search.svg";
 import Locatio from "../assets/Location.svg";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({cart}) => {
   return (
     <header className="bg-perfectGray py-5">
       <div className="containerb flex items-center justify-between">
@@ -43,7 +43,7 @@ const Header = () => {
         </div>
 
         <Link className="px-5 py-3 bg-graygreen rounded-xl giliroy text-white flex items-center justify-between">
-          Корзина <span className="w-0.5 h-7 inline-block bg-gray mx-3"></span> <span>0</span>
+          Корзина <span className="w-0.5 h-7 inline-block bg-gray mx-3"></span> <span>{cart.length}</span>
         </Link>
       </div>
     </header>
