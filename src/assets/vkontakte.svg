@@ -1,0 +1,15 @@
+<svg width="19.000000" height="19.000000" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip19_336">
+			<rect id="vkontakte-logo" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(0.187500 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="vkontakte-logo" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(0.187500 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip19_336)">
+		<path id="Vector" d="M10.21 10.47C9.9 10.29 9.48 10.29 9.13 10.29L8.01 10.29L8.01 12.62L9.04 12.62C9.43 12.62 9.91 12.64 10.25 12.41C10.55 12.21 10.72 11.81 10.72 11.42C10.72 11.07 10.51 10.64 10.21 10.47ZM9.78 8.48C10.03 8.29 10.16 7.95 10.16 7.63C10.16 7.29 10.01 6.96 9.71 6.79C9.41 6.61 8.85 6.65 8.5 6.65L8.01 6.65L8.01 8.7L8.66 8.7C9.03 8.7 9.46 8.72 9.78 8.48ZM15.34 0L3.02 0C1.18 0 -0.32 1.49 -0.32 3.33L-0.32 15.66C-0.32 17.5 1.18 19 3.02 19L15.34 19C17.19 19 18.68 17.5 18.68 15.66L18.68 3.33C18.68 1.49 17.19 0 15.34 0ZM9.7 14.35L5.82 14.35L5.82 4.98L10.06 4.98C11.29 4.98 12.42 5.76 12.42 7.14C12.42 8.21 11.82 8.94 11.07 9.16L11.07 9.19C12.19 9.42 12.99 10.04 12.99 11.51C12.99 12.87 12.07 14.35 9.7 14.35Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="vkontakte-logo" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(0.187500 0.500000)" stroke="#000000" stroke-opacity="1.000000" stroke-width="1.000000"/>
+</svg>

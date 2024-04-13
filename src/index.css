@@ -53,16 +53,6 @@
   background-image: url(./assets/banner.png);
 }
 
-.salom::before {
-  content: "";
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  box-shadow: 0 0 7px #618967;
-  height: 3px;
-  background-color: #618967;
-}
-
 .edit {
   font-family: rustDemo;
   -webkit-text-fill-color: transparent;
@@ -93,19 +83,19 @@
 }
 
 .classicSwiper {
-  width: 100%;
   display: flex;
-  overflow: hidden;
+  border-radius: 20px;
   position: relative;
+  height: 350px;
 }
 
 .classicSwiper .swiper-wrapper {
-  padding: 20px 0;
+  height: 100%;
   display: flex;
 }
 
 .classicSwiper .swiper-slide {
-  height: 390px;
+  height: 100%;
 }
 
 .classicSwiper .swiper-pagination {
@@ -162,12 +152,65 @@
   z-index: 30;
 }
 
+.cartSwiper {
+  display: flex;
+  border-radius: 20px;
+  position: relative;
+  height: 270px;
+}
+.navbar .swiper-wrapper {
+  display: flex;
+}
+
+.cartSwiper .swiper-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.cartSwiper .swiper-slide {
+  height: 100%;
+}
+
 .butonShadow {
   box-shadow: 0 5px 10px #72a379;
 }
 
+.chick {
+  background-color: #211f20;
+  background-size: cover;
+  background-image: url(./assets/chicken.png);
+}
 
-.shsda{
-  /* backdrop-filter: box-shadow(0,0,100px black inset); */
-  /* box-shadow: 0 -100px 500px black inset; */
+.item {
+  color: white;
+  transition: 0.1s all ease-in;
+}
+.item:hover {
+  color: #618967;
+}
+
+.df {
+  overflow: hidden;
+}
+.navSlide .swiper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  background-color: #211f20;
+}
+
+.mapBg {
+  background-image: url(./assets/map.png);
+}
+
+.hide{
+  visibility: hidden;
+
+}
+
+.gradient {
+  background-image: linear-gradient(90deg, #ffffff00, #ffffff14, rgba(255, 255, 255, 0));
 }

@@ -1,9 +1,59 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/LOGOS.svg";
+import arrow from "../assets/arrow.png";
 const Footer = () => {
+  const scrolTo = () => {
+    window.scrollTo({ top: 0, leftL: 0, behavior: "smooth" });
+  };
   return (
-    <div>Footer</div>
-  )
-}
+    <div className="bg-gradient-to-r from-darkenBlack to-perfectGray pt-6 pb-8">
+      <div className="containerb flex items-center">
+        <button onClick={scrolTo} className="bg-white rounded-full mr-16 w-10 h-10 flex items-center justify-center">
+          <img className="w-3" src={arrow} alt="arrow png" />
+        </button>
+        <div className="flex flex-col  justify-between w-1/6 h-full mr-24">
+          <Link to="/" className="mb-5">
+            <img src={logo} alt="" />
+          </Link>
+          <p className="text-white text-xs giliroy-200">
+            © ООО СК «АПШЕРОН» Все права защищены. 2010-2020
+          </p>
+          <a href="" className="text-sm text-white giliroy-200">
+            Пользовательское соглашение
+          </a>
+          <a href="" className="text-sm text-white giliroy-200">
+            Карта сайта
+          </a>
+          <a href="" className="text-sm text-white giliroy-200">
+            Политика конфиденциальности
+          </a>
+        </div>
+        <nav>
+          <ul className="flex items-center justify-between gap-x-10">
+            <li>
+              <Link to="/" className="text-xl text-white giliroy-200">
+                О ресторане
+              </Link>
+            </li>
+            <li>
+              <Link to='/dostavka' className="text-xl text-white giliroy-200">
+                Условия доставки
+              </Link>
+            </li>
+            <li>
+              <Link className="text-xl text-white giliroy-200">
+                Возврат товара
+              </Link>
+            </li>
+            <li>
+              <Link to='/aktsiya' className="text-xl text-white giliroy-200">Акции </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -5,12 +5,13 @@ import Search from "../assets/Search.svg";
 import Locatio from "../assets/Location.svg";
 import { Link } from "react-router-dom";
 
-const Header = ({cart}) => {
+const Header = ({ cart }) => {
   return (
     <header className="bg-perfectGray py-5">
       <div className="containerb flex items-center justify-between">
-        <img src={Logo} alt="Logo icon" />
-
+        <Link to="/">
+          <img src={Logo} alt="Logo icon" />
+        </Link>
         <label
           className=" w-1/3 flex items-center justify-between rounded-xl bg-focusGray px-5"
           htmlFor="input"
@@ -42,8 +43,12 @@ const Header = ({cart}) => {
           </div>
         </div>
 
-        <Link className="px-5 py-3 bg-graygreen rounded-xl giliroy text-white flex items-center justify-between">
-          Корзина <span className="w-0.5 h-7 inline-block bg-gray mx-3"></span> <span>{cart.length}</span>
+        <Link
+          to="/korzinka"
+          className="px-5 py-3 bg-graygreen rounded-xl giliroy text-white flex items-center justify-between"
+        >
+          Корзина <span className="w-0.5 h-7 inline-block bg-gray mx-3"></span>{" "}
+          <span className="w-5 h-5 rounded-full bg-white  text-graygreen flex items-center justify-center">{cart.length}</span>
         </Link>
       </div>
     </header>

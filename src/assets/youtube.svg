@@ -1,0 +1,16 @@
+<svg width="19.000000" height="19.000000" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip19_339">
+			<rect id="video-play-button" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(-0.125000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="video-play-button" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(-0.125000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip19_339)">
+		<path id="Vector" d="M14.81 0L2.93 0C0.96 0 -0.63 1.59 -0.63 3.56L-0.63 15.43C-0.63 17.4 0.96 19 2.93 19L14.81 19C16.78 19 18.37 17.4 18.37 15.43L18.37 3.56C18.37 1.59 16.78 0 14.81 0ZM14.71 11.62C14.64 12.41 14.04 13.42 13.2 13.57C10.51 13.78 7.33 13.75 4.54 13.57C3.67 13.46 3.1 12.41 3.03 11.62C2.9 9.96 2.9 9.02 3.03 7.36C3.1 6.57 3.68 5.53 4.54 5.43C7.29 5.2 10.5 5.25 13.2 5.43C14.17 5.47 14.64 6.46 14.71 7.25C14.84 8.91 14.84 9.96 14.71 11.62Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M7.68 11.87L11.25 9.5L7.68 7.12L7.68 11.87Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<rect id="video-play-button" rx="-0.500000" width="18.000000" height="18.000000" transform="translate(-0.125000 0.500000)" stroke="#000000" stroke-opacity="1.000000" stroke-width="1.000000"/>
+</svg>

@@ -1,13 +1,21 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const MainLayout = ({ cart }) => {
+  const mylocation = useLocation();
+  const getUrl = mylocation.pathname.split("/").join("");
+
   return (
-    <div className="bg-[#2C292A]">
-      <div className="w-full h-1/2 bottom-0 bg-gradient-to-b from-transparent to-[#222] fixed z-20"></div>
-      <Header cart={cart} />
-      <Outlet />
+    <div className="bg-[#2C292A] bg">
+      {getUrl.toLowerCase() !== "menu".toLowerCase() && <Header cart={cart} />}
+      {getUrl.toLowerCase() === "menu".toLowerCase() && <Navbar cart={cart} />}
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };
