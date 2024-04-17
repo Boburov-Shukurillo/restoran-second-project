@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import { foods } from "../data";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,34 +7,50 @@ import buy from "../assets/Buy.png";
 import plus from "../assets/plus.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import Map from "../components/Map";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
 const Home = ({ setCart, cart, data, setData }) => {
+  const [swiper, setSwiper] = useState(4);
+  setInterval(() => {
+    if (window.innerWidth < 1200 && window.innerWidth > 780) {
+      setSwiper(3)
+    } else if (window.innerWidth < 780 && window.innerWidth > 580) {
+      setSwiper(2)
+    } else if (window.innerWidth < 580) {
+      setSwiper(1)
+    }
+  }, 1);
   return (
     <div>
+
       <div className="banner bg-contain bg-no-repeat max-1600:bg-cover">
-        <div className="containerb  flex items-start justify-center h-full flex-col ">
-          <h1 className="edit text-67 leading-tight relative font-semibold text-focusGray uppercase -rotate-[8deg] mb-20 ml-16">
+        <div className="containerb  flex items-start justify-center h-full flex-col max-md:items-center max-md:gap-y-10">
+          <h1 className="edit text-67 leading-tight relative font-semibold text-focusGray uppercase -rotate-[8deg] mb-20 ml-16 max-md:text-4xl max-md:text-center max-md:m-0">
             Доставка ВКУСНЕЙШИХ <br /> БЛЮд за 60 минут
-            <span className="w-full edit2 absolute -top-2 left-2.5 text-67 leading-tight font-semibold text-white rustDemo uppercase">
+            <span className="w-full edit2 absolute -top-2 left-2.5 text-67 leading-tight font-semibold text-white rustDemo uppercase max-md:text-4xl max-md:text-center">
               Доставка ВКУСНЕЙШИХ <br /> БЛЮд за 60 минут
             </span>
           </h1>
-          <button className="ss w-64 h-12 flex ml-40 text-2xl text-white font-bold rustDemo tracking-widest"></button>
+          <button className="ss w-64 h-12 flex ml-40 text-2xl text-white font-bold rustDemo tracking-widest max-md:text-2xl max-md:m-0"></button>
         </div>
       </div>
+
       <ToastContainer />
       <Navbar />
 
-      <div className="border-b-2 border-white/20 py-10">
+      <div className={`border-b-2 border-white/20 py-10`}>
         <div className="containerb overflow-hidden">
           <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
             ХОЛОДНЫЕ ЗАКУСКИ
           </h1>
           <Swiper
             loop={true}
-            slidesPerView={4}
+            slidesPerView={swiper}
             spaceBetween={20}
             className="classicSwiper"
           >
@@ -76,17 +92,17 @@ const Home = ({ setCart, cart, data, setData }) => {
                       src={item.img}
                       alt={item.name + "" + " img"}
                       className="w-full h-48 object-cover rounded-t-xl"
-                    />{" "}
+                    />
                   </Link>
                   <div className="px-4 pb-4 pt-1 flex flex-col w-full h-full justify-between">
                     <div className="w-full flex justify-between flex-col gap-y-0.5">
                       <div className="flex items-center justify-between w-full">
-                        <h2 className="giliroy-500 text-22">{item.name}</h2>
+                        <h2 className="giliroy-500 text-22 max-xl:text-xl max-md:text-base">{item.name}</h2>
                         <p className="giliroy-200 text-xs text-white/80">
                           Вес: {item.massa}г
                         </p>
                       </div>
-                      <p className="text-13 giliroy-200 tracking-wider text-white/50">
+                      <p className="text-13 giliroy-200 tracking-wider text-white/50 max-xl:text-xs max-xl:h-10 max-xl:truncate">
                         {item.description}
                       </p>
                     </div>
@@ -132,12 +148,13 @@ const Home = ({ setCart, cart, data, setData }) => {
         </div>
       </div>
 
+
       <div className="border-b-2 border-white/20 py-10">
         <div className="containerb overflow-hidden">
           <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
             ГОРЯЧИЕ ЗАКУСКИ
           </h1>
-          <Swiper slidesPerView={4} spaceBetween={20} className="classicSwiper">
+          <Swiper slidesPerView={swiper} spaceBetween={20} className="classicSwiper">
             {data.slice(6, 12).map((item) => {
               const [isBuy, setIsBuy] = useState(item.isCart);
               const [food, setFood] = useState(item.food);
@@ -241,7 +258,7 @@ const Home = ({ setCart, cart, data, setData }) => {
           </h1>
           <Swiper
             loop={true}
-            slidesPerView={4}
+            slidesPerView={swiper}
             spaceBetween={20}
             className="classicSwiper"
           >
@@ -338,9 +355,10 @@ const Home = ({ setCart, cart, data, setData }) => {
           </Swiper>
         </div>
       </div>
-      <div className="relative  containerb">
+
+      <div className="relative  containerb max-md:hidden">
         <div className="hide h-[550px] overflow-hidden"><Map /></div>
-        <div className="absolute top-0 left-0 mb-20 chick rounded-xl z-40 flex items-center justify-between gap-x-20">
+        <div className="absolute -top-20 left-0 mb-20 chick rounded-xl z-40 flex items-center justify-between gap-x-20">
           <div className="w-1/2 h-full pl-24 py-16">
             <h1 className="text-4xl giliroy text-white mb-7">НАШЕ КАФЕ</h1>
             <p className="giliroy-200 w-full text-xl text-white mb-20">
@@ -360,7 +378,7 @@ const Home = ({ setCart, cart, data, setData }) => {
               ПОСМОТРЕТЬ МЕНЮ
             </Link>
           </div>
-          <div className="w-2/5 py-20 pr-20 grid grid-cols-2 gap-5">
+          <div className="w-2/5 py-20 pr-20 grid grid-cols-2 grid-rows-2 gap-5">
             <div className="p-5 flex flex-col items-center justify-between bg-focusGray/70 backdrop-blur-md rounded-xl w-full item">
               <svg
                 width="70"
@@ -524,7 +542,7 @@ const Home = ({ setCart, cart, data, setData }) => {
           </div>
         </div>
       </div>
-      <Map />
+      <Map/>
     </div>
   );
 };

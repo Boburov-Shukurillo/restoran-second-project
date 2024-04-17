@@ -21,6 +21,7 @@ export default {
       },
       screens: {
         1600: "1600px",
+        400:"400px"
       },
       borderWidth: {
         "05": "0.5px",

@@ -5,6 +5,7 @@ import minus from "../assets/minus.png";
 import plus from "../assets/plus.png";
 import bin from '../assets/bin.svg'
 import buy from "../assets/Buy.png";
+import { ToastContainer, toast } from 'react-toastify'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Map from "../components/Map";
 const Detail = ({ data, setCart, cart }) => {
@@ -18,7 +19,6 @@ const Detail = ({ data, setCart, cart }) => {
 
   const handleBuy = (e) => {
     let find = data.find((r) => r.id === parseInt(e.target.id));
-    alert(find.isCart)
     let findCart = cart.find((r) => r.id === parseInt(e.target.id));
     find.isCart = true;
     if (!findCart) {
@@ -26,15 +26,18 @@ const Detail = ({ data, setCart, cart }) => {
         return [...d, find];
       });
     } else {
-      alert("ehyy")
+      toast.error("Bu mahsulot karda mavjud", {
+        position: "bottom-right",
+        autoClose: 500,
+      });
     }
   };
 
   return (
     <div>
       <div className="containerb py-20 overflow-hidden flex flex-col gap-y-10">
+          <ToastContainer />
         <div className="flex h-400 items-start justify-start gap-x-12 bg-perfectGray rounded-xl overflow-hidden">
-
           <img src={getFoods.img} alt={getFoods.name + " img"} className="w-1/2 object-cover" />
 
           <div className="w-1/2 flex items-start flex-col justify-center h-full">

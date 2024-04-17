@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { foods } from "../data";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +10,16 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 const Menu = ({ setCart, cart, data, setData }) => {
+  const [swiper, setSwiper] = useState(4)
+    setInterval(() => {
+      if (window.innerWidth < 1200 && window.innerWidth > 780) {
+        setSwiper(3)
+      } else if (window.innerWidth < 780 && window.innerWidth > 580) {
+        setSwiper(2)
+      } else if (window.innerWidth < 580 && window.innerHeight > 0) {
+        setSwiper(1)
+      }
+    }, 1);
   return (
     <div className={`overflow-hidden pt-24`}>
       <div className="border-b-2 border-whitenBlack py-10">
@@ -19,7 +29,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
           </h1>
           <Swiper
             loop={true}
-            slidesPerView={4}
+            slidesPerView={swiper}
             spaceBetween={20}
             className="classicSwiper"
           >
@@ -64,7 +74,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
                   <div className="px-4 pb-4 pt-1 flex flex-col w-full h-full justify-between">
                     <div className="w-full flex justify-between flex-col gap-y-0.5">
                       <div className="flex items-center justify-between w-full">
-                        <h2 className="giliroy-500 text-22">{item.name}</h2>
+                        <h2 className="giliroy-500 text-22 max-md:text-lg">{item.name}</h2>
                         <p className="giliroy-200 text-xs text-white/80">
                           Вес: {item.massa}г
                         </p>
@@ -120,7 +130,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
           <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
             ГОРЯЧИЕ ЗАКУСКИ
           </h1>
-          <Swiper slidesPerView={4} spaceBetween={20} className="classicSwiper">
+          <Swiper slidesPerView={swiper} spaceBetween={20} className="classicSwiper">
             {data.slice(6, 12).map((item) => {
               const [isBuy, setIsBuy] = useState(item.isCart);
               const [food, setFood] = useState(item.food);
@@ -161,7 +171,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
                   <div className="px-4 pb-4 pt-1 flex flex-col w-full h-full justify-between">
                     <div className="w-full flex justify-between flex-col gap-y-0.5">
                       <div className="flex items-center justify-between w-full">
-                        <h2 className="giliroy-500 text-22">{item.name}</h2>
+                        <h2 className="giliroy-500 text-22 max-md:text-lg">{item.name}</h2>
                         <p className="giliroy-200 text-xs text-white/80">
                           Вес: {item.massa}г
                         </p>
@@ -219,7 +229,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
           </h1>
           <Swiper
             loop={true}
-            slidesPerView={4}
+            slidesPerView={swiper}
             spaceBetween={20}
             className="classicSwiper"
           >
@@ -264,7 +274,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
                   <div className="px-4 pb-4 pt-1 flex flex-col w-full h-full justify-between">
                     <div className="w-full flex justify-between flex-col gap-y-0.5">
                       <div className="flex items-center justify-between w-full">
-                        <h2 className="giliroy-500 text-22">{item.name}</h2>
+                        <h2 className="giliroy-500 text-22 max-md:text-lg">{item.name}</h2>
                         <p className="giliroy-200 text-xs text-white/80">
                           Вес: {item.massa}г
                         </p>

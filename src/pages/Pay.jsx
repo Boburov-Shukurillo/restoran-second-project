@@ -26,7 +26,7 @@ const Pay = () => {
   const [inputPodez, setInputPodez] = useState("");
   const [inputEtaj, setInputEtaj] = useState("");
   const [inputComment, setInputComment] = useState("");
-  const [date, setDate] = useState(0);
+  const [date, setDate] = useState("");
   let region = ["russia", "usa", "uzb"];
   const ourdate = new Date();
   // const dateTime =
@@ -60,7 +60,7 @@ const Pay = () => {
         position: "bottom-right",
         autoClose: 500,
       });
-    } else if (date <= 0 || ourdate.getFullYear() >= +date.slice(0, 4)) {
+    } else if (date.toString().trim() === "" || ourdate.getFullYear() >= +date.slice(0, 4)) {
       if (ourdate.getMonth() + 1 >= +date.slice(5, 7)) {
         if (ourdate.getDate() >= +date.slice(8, 10)) {
           toast.error("Sanadan Hatolik", {
@@ -136,17 +136,15 @@ const Pay = () => {
                 <p
                   onClick={() => setPay(1)}
                   id="1"
-                  className={`${
-                    pay === 1 ? "bg-graygreen" : "bg-transparent"
-                  } border-2 border-graygreen cursor-pointer w-full h-full py-5 px-14 rounded-l-xl text-base giliroy-500 text-white`}
+                  className={`${pay === 1 ? "bg-graygreen" : "bg-transparent"
+                    } border-2 border-graygreen cursor-pointer w-full h-full py-5 px-14 rounded-l-xl text-base giliroy-500 text-white`}
                 >
                   Самовывоз
                 </p>
                 <p
                   onClick={() => setPay(2)}
-                  className={`${
-                    pay === 2 ? "bg-graygreen" : "bg-transparent"
-                  } border-2 border-graygreen cursor-pointer border-l-0 w-full h-full py-5 px-14 rounded-r-xl text-base giliroy-500 text-white`}
+                  className={`${pay === 2 ? "bg-graygreen" : "bg-transparent"
+                    } border-2 border-graygreen cursor-pointer border-l-0 w-full h-full py-5 px-14 rounded-r-xl text-base giliroy-500 text-white`}
                 >
                   Доставка
                 </p>
@@ -220,25 +218,22 @@ const Pay = () => {
             <div className="flex items-center justify-between w-2/3 mb-5">
               <div
                 onClick={() => setPayType(1)}
-                className={`${
-                  payType === 1 ? "bg-graygreen" : "bg-transparent"
-                } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
+                className={`${payType === 1 ? "bg-graygreen" : "bg-transparent"
+                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
               >
                 Оплата онлайн
               </div>
               <div
                 onClick={() => setPayType(2)}
-                className={`${
-                  payType === 2 ? "bg-graygreen" : "bg-transparent"
-                } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-x-0`}
+                className={`${payType === 2 ? "bg-graygreen" : "bg-transparent"
+                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-x-0`}
               >
                 Курьеру картой
               </div>
               <div
                 onClick={() => setPayType(3)}
-                className={`${
-                  payType === 3 ? "bg-graygreen" : "bg-transparent"
-                } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-r-xl`}
+                className={`${payType === 3 ? "bg-graygreen" : "bg-transparent"
+                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-r-xl`}
               >
                 Наличными
               </div>
@@ -260,17 +255,15 @@ const Pay = () => {
               <div className="w-1/2 flex items-center justify-between">
                 <div
                   onClick={() => setFoodTime(1)}
-                  className={`${
-                    foodTime === 1 ? "bg-graygreen" : "bg-transparent"
-                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
+                  className={`${foodTime === 1 ? "bg-graygreen" : "bg-transparent"
+                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
                 >
                   В ближайшее время
                 </div>
                 <div
                   onClick={() => setFoodTime(2)}
-                  className={`${
-                    foodTime === 2 ? "bg-graygreen" : "bg-transparent"
-                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-l-0 rounded-r-xl`}
+                  className={`${foodTime === 2 ? "bg-graygreen" : "bg-transparent"
+                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-l-0 rounded-r-xl`}
                 >
                   Ко времени
                 </div>
@@ -301,22 +294,20 @@ const Pay = () => {
             <div className="flex items-center gap-x-2.5 mb-5 text-13 giliroy-500 text-white">
               <span
                 onClick={() => setChangeContact(1)}
-                className={`${
-                  changeContact === 1
-                    ? " border-graygreen  before:bg-graygreen"
-                    : "border-white"
-                } cursor-pointer w-5 h-5 transition-all rounded-full border-2 flex items-center justify-center before:content-[''] before:w-3 before:h-3 before:rounded-full`}
+                className={`${changeContact === 1
+                  ? " border-graygreen  before:bg-graygreen"
+                  : "border-white"
+                  } cursor-pointer w-5 h-5 transition-all rounded-full border-2 flex items-center justify-center before:content-[''] before:w-3 before:h-3 before:rounded-full`}
               ></span>
               <p>Не перезванивать</p>
             </div>
             <div className="flex items-center gap-x-2.5 mb-5 text-13 giliroy-500 text-white">
               <span
                 onClick={() => setChangeContact(2)}
-                className={`${
-                  changeContact === 2
-                    ? " border-graygreen  before:bg-graygreen"
-                    : "border-white"
-                } cursor-pointer w-5 h-5 transition-all rounded-full border-2 flex items-center justify-center before:content-[''] before:w-3 before:h-3 before:rounded-full`}
+                className={`${changeContact === 2
+                  ? " border-graygreen  before:bg-graygreen"
+                  : "border-white"
+                  } cursor-pointer w-5 h-5 transition-all rounded-full border-2 flex items-center justify-center before:content-[''] before:w-3 before:h-3 before:rounded-full`}
               ></span>
               <p>Потребуется звонок оператора</p>
             </div>
