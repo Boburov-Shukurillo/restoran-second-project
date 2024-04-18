@@ -29,7 +29,7 @@ const Navbar = ({ cart }) => {
   }, 1);
   return (
     <div
-      className={`bg-perfectGray border-y-2 border-y-white/10 ${myUrl === "menu" ? "absolute  w-full z-20" : ""
+      className={`bg-perfectGray border-y-2 border-y-white/10 ${myUrl === "menu" ? "absolute  w-full z-10" : ""
         }
         ${swiper ? "top-24" : "top-0"}
       `}

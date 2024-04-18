@@ -11,24 +11,25 @@ export default {
         darkenBlack: "#211F20",
         whitenBlack: "#44403F",
         newGray: "#494544",
+        darkenGrayGrenn: "#699670",
       },
       fontSize: {
         67: "67px",
         13: "13px",
         22: "22px",
         15: "15px",
-        25:"25px"
+        25: "25px",
       },
       screens: {
         1600: "1600px",
-        400:"400px"
+        400: "400px",
       },
       borderWidth: {
         "05": "0.5px",
       },
       height: {
         2000: "2000px",
-        400:"500px"
+        400: "500px",
       },
     },
   },

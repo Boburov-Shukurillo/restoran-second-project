@@ -30,7 +30,7 @@ const Home = ({ setCart, cart, data, setData }) => {
 
       <div className="banner bg-contain bg-no-repeat max-1600:bg-cover">
         <div className="containerb  flex items-start justify-center h-full flex-col max-md:items-center max-md:gap-y-10">
-          <h1 className="edit text-67 leading-tight relative font-semibold text-focusGray uppercase -rotate-[8deg] mb-20 ml-16 max-md:text-4xl max-md:text-center max-md:m-0">
+          <h1 className="edit text-67 leading-tight relative font-semibold text-white/10 uppercase -rotate-[8deg] mb-20 ml-16 max-md:text-4xl max-md:text-center max-md:m-0">
             Доставка ВКУСНЕЙШИХ <br /> БЛЮд за 60 минут
             <span className="w-full edit2 absolute -top-2 left-2.5 text-67 leading-tight font-semibold text-white rustDemo uppercase max-md:text-4xl max-md:text-center">
               Доставка ВКУСНЕЙШИХ <br /> БЛЮд за 60 минут
@@ -45,7 +45,7 @@ const Home = ({ setCart, cart, data, setData }) => {
 
       <div className={`border-b-2 border-white/20 py-10`}>
         <div className="containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             ХОЛОДНЫЕ ЗАКУСКИ
           </h1>
           <Swiper
@@ -151,7 +151,7 @@ const Home = ({ setCart, cart, data, setData }) => {
 
       <div className="border-b-2 border-white/20 py-10">
         <div className="containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             ГОРЯЧИЕ ЗАКУСКИ
           </h1>
           <Swiper slidesPerView={swiper} spaceBetween={20} className="classicSwiper">
@@ -253,7 +253,7 @@ const Home = ({ setCart, cart, data, setData }) => {
 
       <div className="py-10 mb-20">
         <div className="containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             Мясные блюда
           </h1>
           <Swiper

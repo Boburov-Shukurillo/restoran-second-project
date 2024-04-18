@@ -37,33 +37,33 @@ const Detail = ({ data, setCart, cart }) => {
     <div>
       <div className="containerb py-20 overflow-hidden flex flex-col gap-y-10">
           <ToastContainer />
-        <div className="flex h-400 items-start justify-start gap-x-12 bg-perfectGray rounded-xl overflow-hidden">
-          <img src={getFoods.img} alt={getFoods.name + " img"} className="w-1/2 object-cover" />
+        <div className="flex h-400 items-start justify-start gap-x-12 bg-perfectGray rounded-xl overflow-hidden max-md:flex-col max-md:items-center max-md:w-2/3 max-sm:w-full max-md:self-center">
+          <img src={getFoods.img} alt={getFoods.name + " img"} className="w-1/2 h-full object-cover max-md:w-full max-md:h-1/2" />
 
-          <div className="w-1/2 flex items-start flex-col justify-center h-full">
-            <div className="flex items-start gap-y-2 flex-col mb-20">
+          <div className="w-1/2 flex items-start flex-col justify-center h-full  max-md:w-full max-md:items-center max-400:px-2">
+            <div className="flex items-start gap-y-2 flex-col mb-20 max-md:m-0 max-md:items-center">
               <h1 className="text-2xl giliroy-700 text-white">{getFoods.name}</h1>
-              <p className="text-sm text-gray giliroy-200">{getFoods.description}</p>
+              <p className="text-sm text-gray giliroy-200 max-sm:text-center">{getFoods.description}</p>
             </div>
-            <div className="flex flex-col items-start justify-between gap-y-5 mb-10">
+            <div className="flex flex-col items-start justify-between gap-y-5 mb-10 max-md:m-0 max-md:mb-3 max-md:w-full max-md:items-center">
               <p className="text-sm text-white giliroy-200">Вес: {getFoods.massa} г</p>
               <div className="flex items-center gap-x-10">
-                <button id={getFoods.id} onClick={handleBuy} className="flex items-center justify-between bg-graygreen px-8 py-4 rounded-[10px] gap-x-3 text-white giliroy-500 tracking-widest text-sm">Корзина <img id={getFoods.id} src={bin} className="border-l-2 p-2" alt="" /></button>
+                <button id={getFoods.id} onClick={handleBuy} className="flex items-center justify-between bg-graygreen px-8 py-4 rounded-[10px] gap-x-3 text-white giliroy-500 tracking-widest text-sm max-md:text-xs max-md:px-5 max-md:py-2">Корзина <img id={getFoods.id} src={bin} className="border-l-2 p-2" alt="" /></button>
                 <p className="text-25 text-white giliroy-700">{getFoods.price} ₽</p>
               </div>
             </div>
 
             <div className="w-2/3">
-              <div className="w-full flex justify-between  giliroy-200 text-gray">
+              <div className="w-full flex justify-between  giliroy-200 text-gray max-md:text-xs">
                 <span className="text-center">Жиры</span>
                 <span className="text-center">Углеводы</span>
                 <span className="text-center">Ккал</span>
                 <span className="text-center">Вес</span>
               </div>
 
-              <div className="w-full h-0.5 my-5 gradient"></div>
+              <div className="w-full h-0.5 my-5 gradient max-md:my-2"></div>
 
-              <div className="w-full flex items-center justify-between text-white giliroy-700">
+              <div className="w-full flex items-center justify-between text-white giliroy-700 max-md:text-xs">
                 <span className="text-center">{getFoods.oil}</span>
                 <span className="text-center">{getFoods.uglerod}</span>
                 <span className="text-center">{getFoods.kkal}</span>
@@ -80,11 +80,11 @@ const Detail = ({ data, setCart, cart }) => {
 
         <Swiper
           loop={true}
-          slidesPerView={4}
+          slidesPerView={3}
           spaceBetween={20}
-          className="classicSwiper"
+          className="classicSwiper flex items-center justify-between"
         >
-          {data.map((item) => {
+          {foods.map((item) => {
             const [isBuy, setIsBuy] = useState(item.isCart);
             const [food, setFood] = useState(item.food);
             const handleBuy = (e) => {

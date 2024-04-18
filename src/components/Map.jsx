@@ -38,21 +38,21 @@ const Map = () => {
             </p>
           </div>
           <div className="w-full h-0.5 gradient leading-[0px] mb-9"></div>
-          <div className="flex items-end justify-between mb-5 max-md:flex-col max-md:items-start max-400:items-center">
+          <div className="flex items-end justify-between mb-5 max-md:flex-col max-md:items-start max-400:items-center max-md:mb-2 max-md:gap-5">
             <a
               href="#"
-              className="inline-block px-7 py-5 rounded-lg bg-graygreen text-white giliroy-700 tracking-widest text-13"
+              className="inline-block px-7 py-5 rounded-lg bg-graygreen text-white giliroy-700 tracking-widest text-13 max-md:p-0 max-md:w-full max-md:h-16 max-md:flex items-center justify-center"
             >
               ЗАБРОНИРОВАТЬ СТОЛ
             </a>
             <p className="flex items-start justify-between flex-col text-white giliroy-700 text-2xl leading-7 max-md:text-xl max-400:items-center max-400:w-full">
               +7 (917) 510-57-59
-              <span className="text-13 giliroy-200 tracking-wider text-gray">
+              <span className="text-13 giliroy-200 tracking-wider text-gray max-md:text-center">
                 Звоните или оставляйте заявку
               </span>
             </p>
           </div>
-          <div className="flex items-center justify-center gap-x-5 max-md:justify-start">
+          <div className="flex items-center justify-center gap-x-5 max-md:justify-start max-md:flex-col max-md:gap-5">
             <p className="text-base giliroy-700 text-white">Мы в соц сетях:</p>
             <div className="flex items-center gap-x-2.5">
               <img src={facebook} alt="facebook img" />

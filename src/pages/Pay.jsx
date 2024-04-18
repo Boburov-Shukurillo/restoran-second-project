@@ -29,13 +29,6 @@ const Pay = () => {
   const [date, setDate] = useState("");
   let region = ["russia", "usa", "uzb"];
   const ourdate = new Date();
-  // const dateTime =
-  //   ourdate.getFullYear() +
-  //   "-" +
-  //   0 +
-  //   eval(ourdate.getMonth() + 1) +
-  //   "-" +
-  //   ourdate.getDate();
   const getZakaz = () => {
     if (inputName.trim() === "" || inputTelefon.trim() === "") {
       toast.error("Error", {
@@ -55,23 +48,27 @@ const Pay = () => {
           autoClose: 500,
         });
       }
-    } else if (pay === 2 && regionChange.trim() === "") {
-      toast.error("inputlar bo'sh bo'lmasligi kerak 2", {
-        position: "bottom-right",
-        autoClose: 500,
-      });
-    } else if (date.toString().trim() === "" || ourdate.getFullYear() >= +date.slice(0, 4)) {
-      if (ourdate.getMonth() + 1 >= +date.slice(5, 7)) {
-        if (ourdate.getDate() >= +date.slice(8, 10)) {
-          toast.error("Sanadan Hatolik", {
-            position: "bottom-right",
-            autoClose: 500,
-          });
-        } else {
-          toast.success("Sotuv Amalga oshirildi", {
-            position: "bottom-right",
-            autoClose: 500,
-          });
+    } else if (pay === 2) {
+      if (regionChange.trim() === "") {
+
+        toast.error("inputlar bo'sh bo'lmasligi kerak 2", {
+          position: "bottom-right",
+          autoClose: 500,
+        });
+      }
+      if (date.toString().trim() === "" || ourdate.getFullYear() >= +date.slice(0, 4)) {
+        if (ourdate.getMonth() + 1 >= +date.slice(5, 7)) {
+          if (ourdate.getDate() >= +date.slice(8, 10)) {
+            toast.error("Sanadan Hatolik", {
+              position: "bottom-right",
+              autoClose: 500,
+            });
+          } else {
+            toast.success("Sotuv Amalga oshirildi", {
+              position: "bottom-right",
+              autoClose: 500,
+            });
+          }
         }
       }
     }
@@ -79,13 +76,12 @@ const Pay = () => {
 
   return (
     <div className="bg-gradient-to-b from-perfectGray to-darkenBlack">
-      <Navbar />
       <ToastContainer />
       <div className="containerb flex items-center justify-center text-white giliroy-200">
-        <div className="w-3/4 py-12">
-          {ourdate.getHours() >= 21 && (
-            <div className="w-full p-10 mb-10 bg-[#2B2829] rounded-xl flex ic justify-between">
-              <div className="flex items-start flex-col justify-center">
+        <div className="w-3/4 py-12 max-md:w-full">
+          {ourdate.getHours() >= 11 && (
+            <div className="w-full p-10 mb-10 bg-[#2B2829] rounded-xl flex ic justify-between max-md:flex-col">
+              <div className="flex items-start flex-col justify-center max-sm:text-center mb-5">
                 <h1 className="text-22 giliroy-700">
                   Сегодня мы уже не доставляем.
                 </h1>
@@ -94,6 +90,7 @@ const Pay = () => {
                 </p>
               </div>
               <img src={night} alt="night img" />
+              <Link className="text-xs w-full h-10 hidden max-md:flex items-center justify-center bg-graygreen rounded-md">Продолжить оформлять заказ</Link>
             </div>
           )}
 
@@ -111,7 +108,7 @@ const Pay = () => {
             <h1 className="text-lg text-white giliroy-700 mb-8">
               1. Контактная информация
             </h1>
-            <div className="w-full flex items-center justify-between gap-x-5">
+            <div className="w-full flex items-center justify-between gap-5 max-md:flex-col">
               <input
                 className="w-full py-5 px-10 rounded-xl bg-transparent border-2 border-focusGray"
                 type="text"
@@ -129,27 +126,27 @@ const Pay = () => {
             </div>
           </div>
 
-          <div className="p-10 bg-perfectGray rounded-xl mb-5">
+          <div className="p-10 bg-perfectGray rounded-xl mb-5 max-md:p-5">
             <h1 className="text-lg text-white giliroy-700 mb-8">2. Доставка</h1>
             <div className="w-full flex items-center justify-start gap-x-10 mb-10 ">
-              <div className="w-1/2 flex items-center justify-between">
+              <div className="w-1/2 flex items-center justify-between max-md:w-full">
                 <p
                   onClick={() => setPay(1)}
                   id="1"
                   className={`${pay === 1 ? "bg-graygreen" : "bg-transparent"
-                    } border-2 border-graygreen cursor-pointer w-full h-full py-5 px-14 rounded-l-xl text-base giliroy-500 text-white`}
+                    } border-2 border-graygreen cursor-pointer w-full h-full py-5 px-14 max-md:p-0 max-md:w-full max-md:flex items-center justify-center max-md:h-14 rounded-l-xl text-base giliroy-500 text-white`}
                 >
                   Самовывоз
                 </p>
                 <p
                   onClick={() => setPay(2)}
                   className={`${pay === 2 ? "bg-graygreen" : "bg-transparent"
-                    } border-2 border-graygreen cursor-pointer border-l-0 w-full h-full py-5 px-14 rounded-r-xl text-base giliroy-500 text-white`}
+                    } border-2 border-graygreen cursor-pointer border-l-0 w-full h-full py-5 px-14 max-md:p-0 max-md:w-full max-md:flex items-center justify-center max-md:h-14 rounded-r-xl text-base giliroy-500 text-white`}
                 >
                   Доставка
                 </p>
               </div>
-              <p className="flex items-center text-base text-white giliroy-500 gap-x-2.5 justify-between">
+              <p className="flex items-center text-base text-white giliroy-500 gap-x-2.5 justify-between max-md:hidden">
                 <img src={clock} alt="" /> Доставим через 1 час 30 минут
               </p>
             </div>
@@ -158,7 +155,7 @@ const Pay = () => {
                 <h2 className="text-lg text-white giliroy-700 mb-5">
                   Адрес доставки
                 </h2>
-                <div className="w-full gap-x-5 flex items-center justify-between mb-5">
+                <div className="w-full gap-5 flex items-center justify-between mb-5 max-md:flex-col">
                   <input
                     className="w-full py-5 px-10 rounded-xl text-white bg-transparent border-2 border-focusGray"
                     type="text"
@@ -170,7 +167,7 @@ const Pay = () => {
                     placeholder="Номер дома*"
                   />
                 </div>
-                <div className="w-full gap-x-5 flex items-center justify-between mb-5">
+                <div className="w-full gap-5 flex items-center justify-between mb-5 max-md:flex-col">
                   <input
                     className="w-full py-5 px-10 rounded-xl text-white bg-transparent border-2 border-focusGray"
                     type="number"
@@ -213,27 +210,27 @@ const Pay = () => {
             </div>
           </div>
 
-          <div className="p-10 bg-perfectGray rounded-xl mb-5">
+          <div className="p-10 bg-perfectGray rounded-xl mb-5 max-md:p-5">
             <h1 className="text-white giliroy-700 text-lg mb-8">3. Оплатить</h1>
-            <div className="flex items-center justify-between w-2/3 mb-5">
+            <div className="flex items-center justify-between w-2/3 mb-5 max-md:w-full">
               <div
                 onClick={() => setPayType(1)}
                 className={`${payType === 1 ? "bg-graygreen" : "bg-transparent"
-                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
+                  } cursor-pointer border-2 border-graygreen w-full max-md:truncate px-2 py-5 text-center text-white giliroy-200 text-base rounded-l-xl max-md:text-xs`}
               >
                 Оплата онлайн
               </div>
               <div
                 onClick={() => setPayType(2)}
                 className={`${payType === 2 ? "bg-graygreen" : "bg-transparent"
-                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-x-0`}
+                  } cursor-pointer border-2 border-graygreen w-full max-md:truncate px-2 py-5 text-center text-white giliroy-200 text-base border-x-0 max-md:text-xs`}
               >
                 Курьеру картой
               </div>
               <div
                 onClick={() => setPayType(3)}
                 className={`${payType === 3 ? "bg-graygreen" : "bg-transparent"
-                  } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-r-xl`}
+                  } cursor-pointer border-2 border-graygreen w-full max-md:truncate px-2 py-5 text-center text-white giliroy-200 text-base rounded-r-xl max-md:text-xs`}
               >
                 Наличными
               </div>
@@ -247,23 +244,23 @@ const Pay = () => {
             )}
           </div>
 
-          <div className="p-10 bg-perfectGray rounded-xl mb-5">
+          <div className="p-10 bg-perfectGray rounded-xl mb-5 max-md:p-5">
             <h1 className="text-white text-balance giliroy-700 mb-8">
               4. Когда доставить
             </h1>
-            <div className="w-full flex items-center justify-between mb-5">
-              <div className="w-1/2 flex items-center justify-between">
+            <div className="w-full flex items-center justify-between mb-5 max-md:flex-col max-md:items-start max-md:gap-5">
+              <div className="w-1/2 flex items-center justify-between max-md:w-full">
                 <div
                   onClick={() => setFoodTime(1)}
                   className={`${foodTime === 1 ? "bg-graygreen" : "bg-transparent"
-                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl`}
+                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base rounded-l-xl max-md:text-xs max-md:truncate max-md:px-4`}
                 >
                   В ближайшее время
                 </div>
                 <div
                   onClick={() => setFoodTime(2)}
                   className={`${foodTime === 2 ? "bg-graygreen" : "bg-transparent"
-                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-l-0 rounded-r-xl`}
+                    } cursor-pointer border-2 border-graygreen w-full py-5 text-center text-white giliroy-200 text-base border-l-0 rounded-r-xl max-md:text-xs`}
                 >
                   Ко времени
                 </div>
@@ -273,13 +270,13 @@ const Pay = () => {
                   onChange={(e) => setDate(e.target.value)}
                   value={date}
                   type="date"
-                  className="text-white giliroy-200 text-base w-1/4 rounded-lg bg-transparent p-5 py-4 border-white/20 border-2"
+                  className="text-white giliroy-200 text-base w-1/4 max-md:w-full rounded-lg bg-transparent p-5 py-4 border-white/20 border-2"
                   name="food call"
                 />
               )}
             </div>
-            <div className="w-1/3 flex items-center justify-between border-2 border-white/10 p-5 rounded-xl text-white giliroy-200 mb-5">
-              <p>Кол-во персон</p>
+            <div className="w-1/3 flex items-center justify-between border-2 border-white/10 p-5 max-md:w-full rounded-xl text-white giliroy-200 mb-5">
+              <p className="max-md:text-xs">Кол-во персон</p>
               <button onClick={() => person > 1 && setPerson(person - 1)}>
                 <img src={minus} alt="" />
               </button>
@@ -313,9 +310,9 @@ const Pay = () => {
             </div>
           </div>
 
-          <div className="p-10 bg-perfectGray rounded-xl flex items-center justify-between">
-            <div className="flex items-center gap-x-5">
-              <input type="checkbox" name="" id="" />
+          <div className="p-10 bg-perfectGray rounded-xl flex items-center justify-between max-md:flex-col max-md:gap-5">
+            <div className="flex items-center gap-x-5 max-md:gap-0 max-md:w-2/3 max-sm:w-full max-md:order-2 max-md:text-center">
+              <input type="checkbox" checked name="" id="" />
               <p className="text-13 text-white giliroy-500">
                 Я согласен на обработку моих перс. данных в соответствии с
                 Условиями
@@ -323,7 +320,7 @@ const Pay = () => {
             </div>
             <button
               onClick={getZakaz}
-              className="text-sm giliroy-700 text-white px-5 py-3 bg-graygreen rounded-lg"
+              className="text-sm giliroy-700 text-white px-5 py-3 bg-graygreen rounded-lg order-1"
             >
               Оформить заказ
             </button>

@@ -24,7 +24,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
     <div className={`overflow-hidden pt-24`}>
       <div className="border-b-2 border-whitenBlack py-10">
         <div className="containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             ХОЛОДНЫЕ ЗАКУСКИ
           </h1>
           <Swiper
@@ -127,7 +127,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
 
       <div className="border-b-2 border-whitenBlack py-10">
         <div className="containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             ГОРЯЧИЕ ЗАКУСКИ
           </h1>
           <Swiper slidesPerView={swiper} spaceBetween={20} className="classicSwiper">
@@ -224,7 +224,7 @@ const Menu = ({ setCart, cart, data, setData }) => {
 
       <div className="border-b-2 border-whitenBlack py-10">
         <div className=" containerb overflow-hidden">
-          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12">
+          <h1 className="text-white giliroy-700 text-3xl before:content-[''] before:w-1 before:h-10 before:bg-graygreen flex items-center gap-x-5 mb-12 max-md:text-xl">
             Мясные блюда
           </h1>
           <Swiper

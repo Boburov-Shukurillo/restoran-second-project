@@ -9,14 +9,14 @@ const Footer = () => {
   return (
     <div className="bg-gradient-to-r from-darkenBlack to-perfectGray pt-6 pb-8">
       <div className="containerb flex items-center max-md:flex-col max-md:items-center relative">
-        <button onClick={scrolTo} className="bg-white rounded-full  w-10 h-10 flex items-center justify-center max-md:absolute max-md:left-2 max-md:-top-3">
+        <button onClick={scrolTo} className="bg-white rounded-full  w-10 h-10 flex items-center justify-center absolute -left-10 max-md:left-2 max-md:-top-3">
           <img className="w-3" src={arrow} alt="arrow png" />
         </button>
         <div className="flex flex-col  justify-between w-1/6 h-full mr-24 max-md:w-full max-md:items-center max-md:m-0">
           <Link to="/" className="mb-5">
             <img src={logo} alt="" />
           </Link>
-          <p className="text-white text-xs giliroy-200 text-center">
+          <p className="text-white text-xs giliroy-200 max-md:text-center">
             © ООО СК «АПШЕРОН» Все права защищены. 2010-2020
           </p>
           <a href="" className="text-sm text-white giliroy-200">

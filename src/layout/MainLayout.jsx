@@ -11,14 +11,14 @@ const MainLayout = ({ cart }) => {
   setInterval(() => {
     if (window.innerWidth < 780) {
       setSwiper(true)
-    }else{
+    } else {
       setSwiper(false)
     }
   }, 1);
   return (
     <div className="bg-[#2C292A] bg">
-      {swiper && <Header cart={cart} />}
-      {getUrl.toLowerCase() === "menu".toLowerCase() && <Navbar cart={cart} />}
+      {swiper && getUrl === "menu" ? < Header cart={cart} /> : < Header cart={cart} />}
+      {getUrl !== "" && <Navbar cart={cart} />}
       <main>
         <Outlet />
       </main>
