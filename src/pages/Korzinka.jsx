@@ -128,7 +128,7 @@ const Korzinka = ({ cart, setCart }) => {
                         </button>
                       </div>
 
-                      <p className="max-md:text-base giliroy-200">{i.price * i.food} ~ {i.price*13000}uzs $</p>
+                      <p className="max-md:text-base giliroy-200">{i.price * i.food}$ ~ {i.price*13000}uzs </p>
                       <button
                         className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                         onClick={handleRemove}
@@ -158,7 +158,7 @@ const Korzinka = ({ cart, setCart }) => {
                     </button>
                   </div>
 
-                  <p className="text-xl giliroy-700">{i.price * i.food} $</p>
+                  <p className="text-xl giliroy-700">{i.price * i.food}$ ~ {i.price*13000*i.food}uzs</p>
                   <button
                     className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                     onClick={handleRemove}
@@ -202,7 +202,7 @@ const Korzinka = ({ cart, setCart }) => {
                     alt="plus img"
                   />
                 </button>
-                <p className="text-xs giliroy-700 text-white">{e.price} $</p>
+                <p className="text-xs giliroy-700 text-white">{e.price} $ {e.price*13000}uzs</p>
               </SwiperSlide>
             );
           })}
@@ -230,7 +230,7 @@ const Korzinka = ({ cart, setCart }) => {
                           alt="plus img"
                         />
                       </button>
-                      <p className="text-xs giliroy-700 text-white">{item.price} $</p>
+                      <p className="text-xs giliroy-700 text-white">{item.price}$ ~ {item.price*13000*item.food}uzs</p>
                     </div>
                   </div>
                 </div>

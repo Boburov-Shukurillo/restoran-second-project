@@ -25,6 +25,13 @@ const Home = ({ setCart, cart, data, setData }) => {
       setSwiper(1)
     }
   }, 1);
+  function addDotAfterThreeZeros(str) {
+    if (typeof str !== 'string') {
+      return "Invalid input: Input must be a string.";
+    }
+
+    return str.replace(/000/g, '000.');
+  }
   return (
     <div>
 
@@ -108,7 +115,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                     </div>
                     {!isBuy && (
                       <div className="flex items-center justify-between w-full">
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$ ~ {item.price * 13000 * item.food}uzs</p>
                         <button
                           onClick={() => handleBuy(item.id)}
                           className="px-5 bg-graygreen rounded-lg giliroy-200 py-3 flex items-center justify-between gap-x-5 "
@@ -130,7 +137,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                         >
                           <img src={minus} alt="minus" />
                         </button>
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$  ~ {item.price * 13000 * item.food}uzs</p>
                         <button
                           onClick={() => addPr(item.id)}
                           className="w-16 h-12 flex items-center justify-center bg-graygreen rounded-xl shadow-xl shadow-graygreen/50"
@@ -211,7 +218,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                     </div>
                     {!isBuy && (
                       <div className="flex items-center justify-between w-full">
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$ ~ {item.price * 13000 * item.food}uzs</p>
                         <button
                           onClick={() => handleBuy(item.id)}
                           className="px-5 bg-graygreen rounded-lg giliroy-200 py-3 flex items-center justify-between gap-x-5 "
@@ -233,7 +240,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                         >
                           <img src={minus} alt="minus" />
                         </button>
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$ ~ {item.price * 13000 * item.food}uzs</p>
                         <button
                           onClick={() => addPr(item.id)}
                           className="w-16 h-12 flex items-center justify-center bg-graygreen rounded-xl shadow-xl shadow-graygreen/50"
@@ -316,7 +323,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                     </div>
                     {!isBuy && (
                       <div className="flex items-center justify-between w-full">
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$ ~ {item.price * 13000 * item.food}uzs</p>
                         <button
                           onClick={() => handleBuy(item.id)}
                           className="px-5 bg-graygreen rounded-lg giliroy-200 py-3 flex items-center justify-between gap-x-5 "
@@ -338,7 +345,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                         >
                           <img src={minus} alt="minus" />
                         </button>
-                        <p>{item.price * item.food}$ ~ {item.price*13000}uzs</p>
+                        <p>{item.price * item.food}$ ~ {item.price * 13000 * item.food}uzs </p>
                         <button
                           onClick={() => addPr(item.id)}
                           className="w-16 h-12 flex items-center justify-center bg-graygreen rounded-xl shadow-xl shadow-graygreen/50"
@@ -542,7 +549,7 @@ const Home = ({ setCart, cart, data, setData }) => {
           </div>
         </div>
       </div>
-      <Map/>
+      <Map />
     </div>
   );
 };

@@ -49,7 +49,7 @@ const Detail = ({ data, setCart, cart }) => {
               <p className="text-sm text-white giliroy-200">Вес: {getFoods.massa} г</p>
               <div className="flex items-center gap-x-10">
                 <button id={getFoods.id} onClick={handleBuy} className="flex items-center justify-between bg-graygreen px-8 py-4 rounded-[10px] gap-x-3 text-white giliroy-500 tracking-widest text-sm max-md:text-xs max-md:px-5 max-md:py-2">Корзина <img id={getFoods.id} src={bin} className="border-l-2 p-2" alt="" /></button>
-                <p className="text-25 text-white giliroy-700">{getFoods.price} $ ~ {getFoods.price*13000}uzs</p>
+                <p className="text-25 text-white giliroy-700">{getFoods.price}$ ~ {i.price * i.food}$ ~ {i.price*13000*i.food}uzs</p>
               </div>
             </div>
 
@@ -138,7 +138,7 @@ const Detail = ({ data, setCart, cart }) => {
                   </div>
                   {!isBuy && (
                     <div className="flex items-center justify-between w-full">
-                      <p>{item.price * item.food}$</p>
+                      <p>{item.price * item.food}$ ~ {item.price*13000*i.food}uzs</p>
                       <button
                         onClick={() => handleBuy(item.id)}
                         className="px-5 bg-graygreen rounded-lg giliroy-200 py-3 flex items-center justify-between gap-x-5 "
@@ -160,7 +160,7 @@ const Detail = ({ data, setCart, cart }) => {
                       >
                         <img src={minus} alt="minus" />
                       </button>
-                      <p>{item.price * item.food}$</p>
+                      <p>{item.price * item.food}$  ~ {item.price*13000*item.food}uzs</p>
                       <button
                         onClick={() => addPr(item.id)}
                         className="w-16 h-12 flex items-center justify-center bg-graygreen rounded-xl shadow-xl shadow-graygreen/50"
