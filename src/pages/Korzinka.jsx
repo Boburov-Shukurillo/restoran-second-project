@@ -72,6 +72,15 @@ const Korzinka = ({ cart, setCart }) => {
     });
   };
 
+  function formatNumberWithDots(number) {
+    if (typeof number !== "number") return number;
+
+    return number
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+
   return (
     <div>
       <div className={`containerb flex flex-col items-center justify-center gap-y-5`}>
@@ -128,7 +137,7 @@ const Korzinka = ({ cart, setCart }) => {
                         </button>
                       </div>
 
-                      <p className="max-md:text-base giliroy-200">{i.price * i.food}$ ~ {i.price*13000}uzs </p>
+                      <p className="max-md:text-base giliroy-200">{formatNumberWithDots(i.price * i.food)}$ ~ {formatNumberWithDots(i.price * 13000 * i.food)}uzs </p>
                       <button
                         className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                         onClick={handleRemove}
@@ -158,7 +167,7 @@ const Korzinka = ({ cart, setCart }) => {
                     </button>
                   </div>
 
-                  <p className="text-xl giliroy-700">{i.price * i.food}$ ~ {i.price*13000*i.food}uzs</p>
+                  <p className="text-xl giliroy-700">{formatNumberWithDots(i.price * i.food)}$ ~ {formatNumberWithDots(i.price * 13000 * i.food)}uzs</p>
                   <button
                     className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                     onClick={handleRemove}
@@ -202,7 +211,7 @@ const Korzinka = ({ cart, setCart }) => {
                     alt="plus img"
                   />
                 </button>
-                <p className="text-xs giliroy-700 text-white">{e.price} $ {e.price*13000}uzs</p>
+                <p className="text-xs giliroy-700 text-white">{e.price} $ {e.price * 13000}uzs</p>
               </SwiperSlide>
             );
           })}
@@ -230,7 +239,7 @@ const Korzinka = ({ cart, setCart }) => {
                           alt="plus img"
                         />
                       </button>
-                      <p className="text-xs giliroy-700 text-white">{item.price}$ ~ {item.price*13000*item.food}uzs</p>
+                      <p className="text-xs giliroy-700 text-white">{item.price}$ ~ {item.price * 13000 * item.food}uzs</p>
                     </div>
                   </div>
                 </div>
