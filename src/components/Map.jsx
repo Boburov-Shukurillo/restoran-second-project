@@ -6,6 +6,7 @@ import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
 import vkontakte from "../assets/vkontakte.svg";
 import ourLocation from '../assets/ourLocation.png'
+import { MapContainer, TileLayer, Marker, Popup } from 'leaflet'
 const Map = () => {
   return (
     <div className="mapBg bg-contain bg-no-repeat bg-center max-xl:bg-cover ">
@@ -46,7 +47,7 @@ const Map = () => {
               ЗАБРОНИРОВАТЬ СТОЛ
             </a>
             <p className="flex items-start justify-between flex-col text-white giliroy-700 text-2xl leading-7 max-md:text-xl max-400:items-center max-400:w-full">
-              +7 (917) 510-57-59
+            <span className="giliroy"> +998 (93) 510-57-59</span>
               <span className="text-13 giliroy-200 tracking-wider text-gray max-md:text-center">
                 Звоните или оставляйте заявку
               </span>
@@ -63,7 +64,8 @@ const Map = () => {
           </div>
         </div>
         <img src={ourLocation} className="absolute bottom-32 right-72 w-20" alt="" />
-      </div></div>
+      </div>
+    </div>
   );
 };
 

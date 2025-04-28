@@ -338,7 +338,7 @@ const Home = ({ setCart, cart, data, setData }) => {
                         >
                           <img src={minus} alt="minus" />
                         </button>
-                        <p>{item.price * item.food}$</p>
+                        <p>{item.price * item.food}$ ~ {item.price*13000}uzs</p>
                         <button
                           onClick={() => addPr(item.id)}
                           className="w-16 h-12 flex items-center justify-center bg-graygreen rounded-xl shadow-xl shadow-graygreen/50"

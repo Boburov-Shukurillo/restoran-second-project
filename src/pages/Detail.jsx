@@ -49,7 +49,7 @@ const Detail = ({ data, setCart, cart }) => {
               <p className="text-sm text-white giliroy-200">Вес: {getFoods.massa} г</p>
               <div className="flex items-center gap-x-10">
                 <button id={getFoods.id} onClick={handleBuy} className="flex items-center justify-between bg-graygreen px-8 py-4 rounded-[10px] gap-x-3 text-white giliroy-500 tracking-widest text-sm max-md:text-xs max-md:px-5 max-md:py-2">Корзина <img id={getFoods.id} src={bin} className="border-l-2 p-2" alt="" /></button>
-                <p className="text-25 text-white giliroy-700">{getFoods.price} ₽</p>
+                <p className="text-25 text-white giliroy-700">{getFoods.price} $ ~ {getFoods.price*13000}uzs</p>
               </div>
             </div>
 

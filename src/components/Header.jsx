@@ -49,7 +49,7 @@ const Header = ({ cart }) => {
             </span>
             <div className="flex flex-col font-semibold text-white">
               <span className="giliroy text-gray">Контакты:</span>
-              <span className="giliroy"> +7 (917) 510-57-59</span>
+              <span className="giliroy"> +998 (93) 510-57-59</span>
             </div>
           </div>
 

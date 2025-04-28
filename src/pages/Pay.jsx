@@ -79,7 +79,7 @@ const Pay = () => {
       <ToastContainer />
       <div className="containerb flex items-center justify-center text-white giliroy-200">
         <div className="w-3/4 py-12 max-md:w-full">
-          {ourdate.getHours() >= 11 && (
+          {ourdate.getHours() >= 21 && (
             <div className="w-full p-10 mb-10 bg-[#2B2829] rounded-xl flex ic justify-between max-md:flex-col">
               <div className="flex items-start flex-col justify-center max-sm:text-center mb-5">
                 <h1 className="text-22 giliroy-700">

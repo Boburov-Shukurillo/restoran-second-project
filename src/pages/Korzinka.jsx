@@ -65,7 +65,7 @@ const Korzinka = ({ cart, setCart }) => {
 
   let price = eval(TotalPrice.join("+"));
   const error = () => {
-    toast.error("Минимальная сума заказа 1500 ₽", {
+    toast.error("Минимальная сума заказа 150 $", {
       autoClose: 500,
       pauseOnHover: false,
       position: "bottom-right",
@@ -128,7 +128,7 @@ const Korzinka = ({ cart, setCart }) => {
                         </button>
                       </div>
 
-                      <p className="max-md:text-base giliroy-200">{i.price * i.food} ₽</p>
+                      <p className="max-md:text-base giliroy-200">{i.price * i.food} ~ {i.price*13000}uzs $</p>
                       <button
                         className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                         onClick={handleRemove}
@@ -158,7 +158,7 @@ const Korzinka = ({ cart, setCart }) => {
                     </button>
                   </div>
 
-                  <p className="text-xl giliroy-700">{i.price * i.food} ₽</p>
+                  <p className="text-xl giliroy-700">{i.price * i.food} $</p>
                   <button
                     className="w-6 h-6 rounded-full bg-graygreen flex items-center justify-center"
                     onClick={handleRemove}
@@ -202,7 +202,7 @@ const Korzinka = ({ cart, setCart }) => {
                     alt="plus img"
                   />
                 </button>
-                <p className="text-xs giliroy-700 text-white">{e.price} ₽</p>
+                <p className="text-xs giliroy-700 text-white">{e.price} $</p>
               </SwiperSlide>
             );
           })}
@@ -230,7 +230,7 @@ const Korzinka = ({ cart, setCart }) => {
                           alt="plus img"
                         />
                       </button>
-                      <p className="text-xs giliroy-700 text-white">{item.price} ₽</p>
+                      <p className="text-xs giliroy-700 text-white">{item.price} $</p>
                     </div>
                   </div>
                 </div>
@@ -246,17 +246,17 @@ const Korzinka = ({ cart, setCart }) => {
           <div className="flex flex-col items-start gap-y-2 max-md:items-center max-md:text-center max-md:gap-y-5">
             <p className="text-xl giliroy-200 text-white">
               <span className="text-sm text-white/50 giliroy-500">Итого: </span>
-              {price} ₽
+              {price} $
             </p>
             <p className="text-xs giliroy-200 text-white">
               До бесплатной доставки не хватет:{" "}
-              <span className="text-graygreen">100 ₽</span>
+              <span className="text-graygreen">100 $</span>
             </p>
             <p className="text-xs giliroy-200 text-white">
-              Минимальная сума заказа 1500 ₽
+              Минимальная сума заказа 150 $
             </p>
           </div>
-          {price > 1500 && (
+          {price > 150 && (
             <Link
               to="/pay"
               className="text-sm giliroy-700 text-white px-5 py-3 bg-graygreen rounded-lg  max-md:w-full max-md:px-0 max-md:text-center"
@@ -264,7 +264,7 @@ const Korzinka = ({ cart, setCart }) => {
               Оформить заказ
             </Link>
           )}
-          {price < 1500 && (
+          {price < 150 && (
             <Link
               onClick={error}
               className="text-sm giliroy-700 text-white px-5 py-3 bg-graygreen rounded-lg  max-md:w-full max-md:px-0 max-md:text-center"

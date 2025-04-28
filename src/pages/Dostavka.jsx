@@ -68,7 +68,7 @@ const Dostavka = () => {
 
       <div className="w-1/2 col-start-1 flex flex-col items-start justify-between max-md:w-full">
         <span className='text-white giliroy-700 text-22 max-md:text-xl'>Минимальный заказ:</span>
-        <p className='text-gray giliroy-200 text-22 max-md:text-xl max-sm:text-base'>Бесплатная доставка пешим курьером при сумме заказа от 400 ₽
+        <p className='text-gray giliroy-200 text-22 max-md:text-xl max-sm:text-base'>Бесплатная доставка пешим курьером при сумме заказа от 400 $
           Доставка оператором такси от любой суммы заказа - по тарифам
           перевозчика.</p>
       </div>
